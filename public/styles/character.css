@@ -1,0 +1,264 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.character-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.character-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.character-image {
+  flex: 0 0 200px;
+  margin-right: 2rem;
+}
+
+.character-image img {
+  max-width: 100%;
+  border-radius: 50%;
+  border: 5px solid #4a90e2;
+}
+
+.character-image.waving {
+  animation: wave 0.5s ease-in-out 2;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+}
+
+.character-intro {
+  flex: 1;
+}
+
+.greet-message {
+  font-size: 1.2em;
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.wave-button, .quiz-button, .back-button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1em;
+}
+
+.wave-button:hover, .quiz-button:hover, .back-button:hover {
+  background-color: #3a7bc8;
+}
+
+.character-description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.terms-container {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.terms-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.term-item {
+  background-color: #e9f2fe;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.term-item:hover {
+  background-color: #d4e5fd;
+}
+
+.term-item.active {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.term-item strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.term-item p {
+  margin-top: 0.5rem;
+  font-size: 0.9em;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.term-item.active p {
+  color: white;
+}
+
+.quiz-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-button:hover {
+  background-color: #3a7bc8;
+}
+
+.quiz-container, .quiz-result {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.quiz-options button {
+  padding: 10px;
+  background-color: #e9f2fe;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-options button:hover {
+  background-color: #d4e5fd;
+}
+
+.quiz-result {
+  text-align: center;
+}
+
+.quiz-result button {
+  margin-top: 15px;
+}
+
+.back-button-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.back-button {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+  .character-page {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .character-page {
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .character-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .character-image {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .quiz-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.perfect-score {
+  font-size: 1.2em;
+  color: #ffd700;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4a90e2;
+  transition: width 0.3s ease-in-out;
+}
+
+.question-counter {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+}
