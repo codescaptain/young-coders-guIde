@@ -1,0 +1,85 @@
+.main {
+  padding: 1rem;
+  margin: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mainItem {
+  display: flex;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.characterImage {
+  flex: 0 0 200px;
+  margin-right: 20px;
+}
+
+.characterImage img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.characterInfo {
+  flex: 1;
+}
+
+.characterButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.characterButton:hover {
+  background-color: #0056b3;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.greetMessage {
+  font-style: italic;
+  color: #4a4a4a;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  border-left: 3px solid #007bff;
+  padding-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .mainItem {
+    flex-direction: column;
+  }
+
+  .characterImage {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}

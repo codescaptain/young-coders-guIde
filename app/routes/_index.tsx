@@ -1,48 +1,48 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction, LoaderFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
+import { useLoaderData, Link } from "@remix-run/react";
+import youngCodersGuide from "~/data/young_coders_guide.json";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Tech Characters for Young Coders" },
+    { name: "description", content: "Learn about our amazing tech characters!" },
   ];
 };
 
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: "/styles/main.css" }
+];
+
+export const loader: LoaderFunction = async () => {
+  return json(youngCodersGuide.chapters);
+};
+
 export default function Index() {
+  const chapters = useLoaderData<typeof loader>();
+
   return (
-    <div className="font-sans p-4">
-      <h1 className="text-3xl">Welcome to Remix</h1>
-      <ul className="list-disc mt-4 pl-6 space-y-2">
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/start/quickstart"
-            rel="noreferrer"
-          >
-            5m Quick Start
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/start/tutorial"
-            rel="noreferrer"
-          >
-            30m Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/docs"
-            rel="noreferrer"
-          >
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div className="main">
+      <div className="container">
+        {chapters.map((chapter, index) => (
+          <div key={index} className="mainItem">
+            <div className="characterImage">
+              <img 
+                src={`/images/${chapter.character_image_prefix}.png`} 
+                alt={`${chapter.character.name} character`}
+              />
+            </div>
+            <div className="characterInfo">
+              <h1>{chapter.character.name}</h1>
+              <p className="greetMessage">{chapter.character.greet_message}</p>
+              <p>{chapter.character.description}</p>
+              <Link to={`/characters/${chapter.character.name.toLowerCase().replace(" ", "-")}`} className="characterButton">
+                Learn More About {chapter.character.name}
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
