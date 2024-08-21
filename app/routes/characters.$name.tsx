@@ -1,7 +1,7 @@
 import type { MetaFunction, LoaderFunction, LinksFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData, Link } from "@remix-run/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import youngCodersGuide from "~/data/young_coders_guide.json";
 
 export const meta: MetaFunction = ({ data }) => {
@@ -43,11 +43,16 @@ export default function Character() {
         correctAnswer: string;
         incorrectAnswers: string[];
     }>>([]);
+    const [certificateEarned, setCertificateEarned] = useState(false);
+    const [showNameInput, setShowNameInput] = useState(false);
+    const [userName, setUserName] = useState("");
+    const certificateRef = useRef(null);
 
-    const totalQuestions = 5;
+    const totalQuestions = 7;
+    const passingScore = Math.ceil(totalQuestions * 0.7);
 
     useEffect(() => {
-        if (showResult && score === totalQuestions) {
+        if (showResult && score >= passingScore) {
             import('canvas-confetti').then(confetti => {
                 confetti.default({
                     particleCount: 100,
@@ -70,7 +75,7 @@ export default function Character() {
     const generateQuizQuestions = () => {
         const shuffledTerms = [...character.terms].sort(() => 0.5 - Math.random());
         const selectedTerms = shuffledTerms.slice(0, totalQuestions);
-
+        
         const questions = selectedTerms.map(term => ({
             question: `What does ${term.term} mean?`,
             correctAnswer: term.description,
@@ -89,6 +94,8 @@ export default function Character() {
         setCurrentQuestionIndex(0);
         setScore(0);
         setShowResult(false);
+        setCertificateEarned(false);
+        setUserName("");
     };
 
     const handleAnswer = (isCorrect: boolean) => {
@@ -98,6 +105,42 @@ export default function Character() {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
             setShowResult(true);
+            if (score + (isCorrect ? 1 : 0) >= passingScore) {
+                setShowNameInput(true);
+            }
+        }
+    };
+
+    const handleNameSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setShowNameInput(false);
+        setCertificateEarned(true);
+        generateCertificate();
+    };
+
+    const generateCertificate = async () => {
+        if (certificateRef.current) {
+            const { jsPDF } = await import('jspdf');
+            const html2canvas = (await import('html2canvas')).default;
+            
+            const canvas = await html2canvas(certificateRef.current);
+            const imgData = canvas.toDataURL('image/png');
+            
+            // A4 boyutları: 210mm x 297mm
+            const pdfWidth = 210;
+            const pdfHeight = 297;
+            
+            const imgWidth = canvas.width;
+            const imgHeight = canvas.height;
+            
+            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+            
+            const imgX = (pdfWidth - imgWidth * ratio) / 2;
+            const imgY = 30;
+            
+            const pdf = new jsPDF('p', 'mm', 'a4');
+            pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+            pdf.save(`${userName}_${character.name}_Certificate.pdf`);
         }
     };
 
@@ -137,15 +180,17 @@ export default function Character() {
                 </div>
 
                 {!quizStarted && (
-                    <button className="quiz-button" onClick={startQuiz}>Start Quiz!</button>
+                    <div className="quiz-buttons">
+                        <button className="quiz-button" onClick={startQuiz}>Start Quiz!</button>
+                    </div>
                 )}
 
                 {quizStarted && !showResult && (
                     <div className="quiz-container">
                         <div className="progress-bar-container">
-                            <div
-                                className="progress-bar"
-                                style={{ width: `${progressPercentage}%` }}
+                            <div 
+                                className="progress-bar" 
+                                style={{width: `${progressPercentage}%`}}
                             ></div>
                         </div>
                         <p className="question-counter">Question {currentQuestionIndex + 1} of {totalQuestions}</p>
@@ -167,13 +212,49 @@ export default function Character() {
                     </div>
                 )}
 
+                {showNameInput && (
+                    <div className="name-input-popup">
+                        <form onSubmit={handleNameSubmit}>
+                            <h3>Congratulations! You've earned a certificate!</h3>
+                            <p>Please enter your name to generate your certificate:</p>
+                            <input
+                                type="text"
+                                value={userName}
+                                onChange={(e) => setUserName(e.target.value)}
+                                placeholder="Your Full Name"
+                                required
+                            />
+                            <button type="submit">Generate Certificate</button>
+                        </form>
+                    </div>
+                )}
+
                 {showResult && (
                     <div className="quiz-result">
                         <h3>Quiz Complete!</h3>
                         <p>You scored {score} out of {totalQuestions}!</p>
-                        {score === totalQuestions && (
-                            <p className="perfect-score">Perfect Score! Congratulations! 🎉</p>
+                        {certificateEarned ? (
+                            <div className="certificate" ref={certificateRef}>
+                                <img 
+                                    src={`/images/${chapter.character_image_prefix}.png`} 
+                                    alt={`${character.name} character`}
+                                    className="certificate-character-image"
+                                />
+                                <h2>Certificate of Achievement</h2>
+                                <p>This certifies that</p>
+                                <h3>{userName}</h3>
+                                <p>has successfully completed the</p>
+                                <h3>{character.name} Tech Challenge</h3>
+                                <p>in the Young Coder's Guide program</p>
+                                <p>Date: {new Date().toLocaleDateString()}</p>
+                            </div>
+                        ) : (
+                            <p>You need at least {passingScore} correct answers to earn the certificate. Keep trying!</p>
                         )}
+                        {certificateEarned && (
+                            <button className="quiz-button" onClick={generateCertificate}>Download Certificate</button>
+                        )}
+                        <br/>
                         <button onClick={startQuiz}>Try Again</button>
                     </div>
                 )}
