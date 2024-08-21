@@ -15,7 +15,9 @@
     "@remix-run/react": "^2.11.2",
     "@remix-run/serve": "^2.11.2",
     "canvas-confetti": "^1.9.3",
+    "html2canvas": "^1.4.1",
     "isbot": "^4.1.0",
+    "jspdf": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
