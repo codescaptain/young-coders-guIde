@@ -1,6 +1,6 @@
 import type { MetaFunction, LoaderFunction, LinksFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { useLoaderData, Link } from "@remix-run/react";
+import { useLoaderData, Link, Outlet } from "@remix-run/react";
 import { useState, useEffect, useRef } from "react";
 import youngCodersGuide from "~/data/young_coders_guide.json";
 
@@ -13,7 +13,8 @@ export const meta: MetaFunction = ({ data }) => {
 
 export const links: LinksFunction = () => [
     { rel: "stylesheet", href: "/styles/character.css" },
-    { rel: "stylesheet", href: "/styles/main.css" }
+    { rel: "stylesheet", href: "/styles/main.css" },
+    { rel: "stylesheet", href: "/styles/puzzle.css" }
 ];
 
 export const loader: LoaderFunction = async ({ params }) => {
@@ -75,7 +76,7 @@ export default function Character() {
     const generateQuizQuestions = () => {
         const shuffledTerms = [...character.terms].sort(() => 0.5 - Math.random());
         const selectedTerms = shuffledTerms.slice(0, totalQuestions);
-        
+
         const questions = selectedTerms.map(term => ({
             question: `What does ${term.term} mean?`,
             correctAnswer: term.description,
@@ -122,22 +123,21 @@ export default function Character() {
         if (certificateRef.current) {
             const { jsPDF } = await import('jspdf');
             const html2canvas = (await import('html2canvas')).default;
-            
+
             const canvas = await html2canvas(certificateRef.current);
             const imgData = canvas.toDataURL('image/png');
-            
-            // A4 boyutları: 210mm x 297mm
+
             const pdfWidth = 210;
             const pdfHeight = 297;
-            
+
             const imgWidth = canvas.width;
             const imgHeight = canvas.height;
-            
+
             const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-            
+
             const imgX = (pdfWidth - imgWidth * ratio) / 2;
             const imgY = 30;
-            
+
             const pdf = new jsPDF('p', 'mm', 'a4');
             pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
             pdf.save(`${userName}_${character.name}_Certificate.pdf`);
@@ -148,6 +148,14 @@ export default function Character() {
 
     return (
         <div className="main character-page">
+            <div className="puzzle-link-container">
+                <div className="back-button-container" style={{marginBottom: 20}}>
+                    <Link to={`/characters/${character.name.toLowerCase().replace(" ", "-")}/puzzle`} className="back-button">
+                        Play {character.name} Puzzle Game
+                    </Link>
+                </div>
+                <Outlet />
+            </div>
             <div className="container">
                 <div className="character-header">
                     <div className={`character-image ${isWaving ? 'waving' : ''}`}>
@@ -188,9 +196,9 @@ export default function Character() {
                 {quizStarted && !showResult && (
                     <div className="quiz-container">
                         <div className="progress-bar-container">
-                            <div 
-                                className="progress-bar" 
-                                style={{width: `${progressPercentage}%`}}
+                            <div
+                                className="progress-bar"
+                                style={{ width: `${progressPercentage}%` }}
                             ></div>
                         </div>
                         <p className="question-counter">Question {currentQuestionIndex + 1} of {totalQuestions}</p>
@@ -235,8 +243,8 @@ export default function Character() {
                         <p>You scored {score} out of {totalQuestions}!</p>
                         {certificateEarned ? (
                             <div className="certificate" ref={certificateRef}>
-                                <img 
-                                    src={`/images/${chapter.character_image_prefix}.png`} 
+                                <img
+                                    src={`/images/${chapter.character_image_prefix}.png`}
                                     alt={`${character.name} character`}
                                     className="certificate-character-image"
                                 />
@@ -254,7 +262,7 @@ export default function Character() {
                         {certificateEarned && (
                             <button className="quiz-button" onClick={generateCertificate}>Download Certificate</button>
                         )}
-                        <br/>
+                        <br />
                         <button onClick={startQuiz}>Try Again</button>
                     </div>
                 )}
