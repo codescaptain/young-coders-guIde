@@ -51,7 +51,7 @@ export default function Character() {
     const [userName, setUserName] = useState("");
     const certificateRef = useRef(null);
 
-    const totalQuestions = 1;
+    const totalQuestions = 7;
     const passingScore = Math.ceil(totalQuestions * 0.7);
 
     useEffect(() => {
