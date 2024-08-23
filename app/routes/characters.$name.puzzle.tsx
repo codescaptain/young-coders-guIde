@@ -3,6 +3,7 @@ import { useLoaderData, Link } from '@remix-run/react';
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import youngCodersGuide from "~/data/young_coders_guide.json";
+import { useTranslation } from 'react-i18next';
 
 export const loader: LoaderFunction = async ({ params }) => {
   const characterName = params.name?.replace("-", " ");
@@ -18,6 +19,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function CharacterPuzzle() {
+  const { t } = useTranslation(['common', 'term']);
   const chapter = useLoaderData<typeof loader>();
   const { character } = chapter;
   const [pieces, setPieces] = useState<number[]>([]);
@@ -84,11 +86,11 @@ export default function CharacterPuzzle() {
       </div>
       {completed && showCompletion && (
         <div className="completion-message show">
-          Woohoo! You solved the puzzle! 🎉
+          {t('common:solved_puzzle_message')}
         </div>
       )}
       <Link to={`/characters/${character.name.toLowerCase().replace(" ", "-")}`} className="back-button">
-        Back to {character.name}
+      {t('common:back_to_the_character', {name: character.name})}
       </Link>
     </div>
   );
