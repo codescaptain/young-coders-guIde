@@ -1,0 +1,190 @@
+{
+  "toby_tech": {
+    "name": "Toby Tech",
+    "greet_message": "👋 Merhaba genç kaşif!",
+    "description": "Ben Toby Tech, ve seni bilgisayar dünyasında heyecan verici bir yolculuğa çıkarmak için buradayım! 🌟 Bu bölümde, her gün kullandığımız inanılmaz makineleri oluşturan temel bilgisayar terimlerini ve bileşenlerini keşfedeceğiz. İster bilgisayarların nasıl çalıştığını merak et ister yeni kelimeler öğrenmek iste, doğru yerdesin. Bu terimleri eğlenceli ve basit bir şekilde anlamana yardımcı olacağım. Hazır mısın? Hadi başlayalım!",
+    "terms": {
+      "cpu": {
+        "term": "CPU (Merkezi İşlem Birimi)",
+        "description": "Bilgisayarın beyni olan ve içindeki işlemlerin çoğunu gerçekleştiren birimdir."
+      },
+      "ram": {
+        "term": "RAM (Rastgele Erişimli Bellek)",
+        "description": "Bilgisayarın çalışırken verileri geçici olarak depolamak için kullandığı bir bellek türüdür."
+      },
+      "hard_drive": {
+        "term": "Sabit Disk",
+        "description": "Belgeler, resimler ve programlar gibi tüm verilerinizi depolayan bileşendir."
+      },
+      "motherboard": {
+        "term": "Anakart",
+        "description": "CPU, bellek ve diğer önemli bileşenleri barındıran ana devre kartıdır."
+      },
+      "gpu": {
+        "term": "GPU (Grafik İşleme Birimi)",
+        "description": "Grafikleri ve görsel efektleri işleyen özel bir işlemcidir."
+      },
+      "psu": {
+        "term": "Güç Kaynağı Birimi (PSU)",
+        "description": "Bilgisayardaki tüm bileşenlere güç sağlayan ünitedir."
+      },
+      "os": {
+        "term": "İşletim Sistemi (OS)",
+        "description": "Bilgisayarın donanımını ve yazılımını yöneten yazılımdır, örneğin Windows, macOS veya Linux."
+      },
+      "input_devices": {
+        "term": "Giriş Cihazları",
+        "description": "Bilgisayarınızla etkileşimde bulunmanıza olanak tanıyan cihazlar, örneğin klavye ve fare."
+      },
+      "output_devices": {
+        "term": "Çıkış Cihazları",
+        "description": "Bilgisayarın işlediği verilerin sonuçlarını gösteren cihazlar, örneğin monitörler ve yazıcılar."
+      },
+      "bios": {
+        "term": "BIOS (Temel Giriş/Çıkış Sistemi)",
+        "description": "Bilgisayarın açılış sürecinde donanımı başlatan ve test eden yazılımdır."
+      }
+    }
+  },
+  "ivy_internet": {
+    "name": "Ivy Internet",
+    "greet_message": "🌐 Merhaba, dijital kaşif!",
+    "description": "Ben Ivy Internet, ve seni internet dünyasında heyecan verici bir yolculuğa çıkarmak için buradayım! 🌍 Bu bölümde, internetle ilgili temel terimleri ve kavramları keşfedeceğiz. Web tarayıcılarından URL'lere ve çevrimiçi güvenliğe kadar, internetin nasıl çalıştığını ve güvenli bir şekilde nasıl gezineceğinizi öğreneceğiz. Dijital dünyaya dalmaya hazır mısın? Haydi birlikte internetin harikalarını keşfedelim!",
+    "terms": {
+      "url": {
+        "term": "URL (Tekdüzen Kaynak Bulucu)",
+        "description": "İnternetteki web sitelerine erişmek için kullanılan adres."
+      },
+      "web_browser": {
+        "term": "Web Tarayıcısı",
+        "description": "Web sitelerine erişmek ve görüntülemek için kullanılan yazılım uygulaması, örneğin Chrome, Firefox veya Safari."
+      },
+      "search_engine": {
+        "term": "Arama Motoru",
+        "description": "İnternette bilgi bulmanıza yardımcı olan araç, örneğin Google veya Bing."
+      },
+      "email": {
+        "term": "E-posta",
+        "description": "İnternet üzerinden mesaj göndermenin ve almanın bir yolu."
+      },
+      "wifi": {
+        "term": "Wi-Fi",
+        "description": "Cihazların kablosuz olarak internete bağlanmasını sağlayan teknoloji."
+      },
+      "firewall": {
+        "term": "Güvenlik Duvarı",
+        "description": "Ağ trafiğini kontrol eden bir güvenlik sistemi."
+      },
+      "cybersecurity": {
+        "term": "Siber Güvenlik",
+        "description": "Bilgisayarları ve ağları dijital saldırılardan koruma uygulamasıdır."
+      },
+      "cloud_storage": {
+        "term": "Bulut Depolama",
+        "description": "Verileri çevrimiçi olarak depolamanın bir yolu, böylece internete bağlı herhangi bir cihazdan erişebilirsiniz."
+      },
+      "ip_address": {
+        "term": "IP Adresi",
+        "description": "İnternette veya yerel bir ağda bir cihazı tanımlayan benzersiz adres."
+      },
+      "cookies": {
+        "term": "Çerezler",
+        "description": "Web sitelerinin tercihlerinizi hatırlaması için bilgisayarınıza kaydettiği küçük veri parçaları."
+      }
+    }
+  },
+  "sammy_script": {
+    "name": "Sammy Script",
+    "greet_message": "👨‍💻 Merhaba, geleceğin kodlayıcısı!",
+    "description": "Ben Sammy Script, yazılım ve programlama dünyasında güvendiğin rehberinim! 🚀 Bu bölümde, her genç programcının bilmesi gereken bazı harika terimlere dalacağız. İster yeni başlıyor ol, ister kodlarla oynuyor ol, bu terimler yazılımın nasıl çalıştığını ve kendi programlarını nasıl yazacağını anlamana yardımcı olacak. Kodlama dünyasına girmeye hazır mısın? Hadi kolları sıvayalım ve başlayalım!",
+    "terms": {
+      "algorithm": {
+        "term": "Algoritma",
+        "description": "Bir problemi çözmek için adım adım prosedür veya formül."
+      },
+      "programming_language": {
+        "term": "Programlama Dili",
+        "description": "Bilgisayar için talimatlar yazmak için kullanılan resmi bir dil, örneğin Python, Java veya JavaScript."
+      },
+      "source_code": {
+        "term": "Kaynak Kodu",
+        "description": "Bir programcı tarafından bir programlama dilinde yazılmış talimatlar seti."
+      },
+      "compiler": {
+        "term": "Derleyici",
+        "description": "Kaynak kodunu bilgisayarın anlayabileceği makine koduna çeviren araç."
+      },
+      "debugger": {
+        "term": "Hata Ayıklayıcı",
+        "description": "Programcıların kodlarındaki hataları bulmasına ve düzeltmesine yardımcı olan araç."
+      },
+      "ide": {
+        "term": "IDE (Entegre Geliştirme Ortamı)",
+        "description": "Kod yazmak, test etmek ve hata ayıklamak için araçlar sağlayan yazılım uygulaması, örneğin Visual Studio veya PyCharm."
+      },
+      "version_control": {
+        "term": "Sürüm Kontrolü",
+        "description": "Kod değişikliklerini takip eden ve geliştiricilerin işbirliği yapmasını sağlayan bir sistem, örneğin Git."
+      },
+      "api": {
+        "term": "API (Uygulama Programlama Arayüzü)",
+        "description": "Yazılım uygulamaları oluşturmak için araçlar ve protokoller seti."
+      },
+      "software_bug": {
+        "term": "Yazılım Hatası",
+        "description": "Bir yazılım programında beklenmedik davranışlara neden olan hata veya kusur."
+      },
+      "open_source": {
+        "term": "Açık Kaynak",
+        "description": "Herkesin kullanabileceği, değiştirebileceği ve dağıtabileceği yazılım."
+      }
+    }
+  },
+  "danny_device": {
+    "name": "Danny Device",
+    "greet_message": "🔧 Merhaba, teknoloji kaşifleri!",
+    "description": "Ben Danny Device, tüm donanım konularında rehberinim! 🌟 Bu bölümde, bilgisayarın fiziksel parçalarını ve her gün kullandığınız diğer harika cihazları keşfedeceğiz. Klavyelerden ekranlara ve hatta içindeki minik çiplere kadar, cihazlarınızı çalıştıran her şeyi öğreneceğiz. Hadi birlikte teknoloji dünyasına dalalım ve içinde neler olduğunu görelim! Cihazların dünyasına dalmaya hazır mısınız? Hadi başlayalım!",
+    "terms": {
+      "keyboard": {
+        "term": "Klavye",
+        "description": "Bilgisayara metin ve komut girmek için kullanılan bir cihaz."
+      },
+      "mouse": {
+        "term": "Fare",
+        "description": "Bilgisayar ekranındaki nesnelerle etkileşim kurmak için kullanılan işaretleme cihazı."
+      },
+      "monitor": {
+        "term": "Monitör",
+        "description": "Bilgisayarın çıktısını görüntülemek için kullanılan bir ekran."
+      },
+      "printer": {
+        "term": "Yazıcı",
+        "description": "Dijital bilgiyi kağıda basan çıkış cihazı."
+      },
+      "usb": {
+        "term": "USB (Evrensel Seri Veri Yolu)",
+        "description": "Klavye, fare ve depolama cihazları gibi cihazları bilgisayara bağlamak için kullanılan standart."
+      },
+      "router": {
+        "term": "Yönlendirici",
+        "description": "İnternet trafiğini ağlar arasında yönlendiren bir cihaz."
+      },
+      "ssd": {
+        "term": "SSD (Katı Hal Sürücüsü)",
+        "description": "Verileri depolamak için kullanılan geleneksel sabit disklere göre daha hızlı ve güvenilir bir alternatif."
+      },
+      "graphics_card": {
+        "term": "Grafik Kartı",
+        "description": "Bilgisayarda görüntüleri ve videoları işleyen bir bileşen."
+      },
+      "webcam": {
+        "term": "Web Kamerası",
+        "description": "Genellikle video görüşmeleri için kullanılan bir kamera."
+      },
+      "headphones": {
+        "term": "Kulaklık",
+        "description": "Sesleri özel olarak dinlemek için kulaklara takılan bir cihaz."
+      }
+    }
+  }
+}

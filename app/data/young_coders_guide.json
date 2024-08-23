@@ -6,46 +6,56 @@
             "character": {
                 "greet_message": "👋 Hello there, young explorer!",
                 "name": "Toby Tech",
-                "description": " I’m Toby Tech, and I’m thrilled to be your guide on this exciting journey into the world of computers! 🌟 In this chapter, we’ll uncover the essential computer terms and components that make up the incredible machines we use every day.Whether you’re curious about how computers work or just want to learn some new words, you’re in the right place. I’ll be here to help you understand these terms in a fun and simple way. Ready to dive in? Let’s get started!",
+                "description": "I’m Toby Tech, and I’m thrilled to be your guide on this exciting journey into the world of computers! 🌟 In this chapter, we’ll uncover the essential computer terms and components that make up the incredible machines we use every day. Whether you’re curious about how computers work or just want to learn some new words, you’re in the right place. I’ll be here to help you understand these terms in a fun and simple way. Ready to dive in? Let’s get started!",
                 "terms": [
                     {
                         "term": "CPU (Central Processing Unit)",
+                        "term_key": "cpu",
                         "description": "The brain of the computer that performs most of the processing inside a computer."
                     },
                     {
                         "term": "RAM (Random Access Memory)",
+                        "term_key": "ram",
                         "description": "A type of computer memory that is used to store data temporarily while the computer is running."
                     },
                     {
                         "term": "Hard Drive",
+                        "term_key": "hard_drive",
                         "description": "The component that stores all your data, like documents, pictures, and programs."
                     },
                     {
                         "term": "Motherboard",
+                        "term_key": "motherboard",
                         "description": "The main circuit board that holds the CPU, memory, and other essential components."
                     },
                     {
                         "term": "GPU (Graphics Processing Unit)",
+                        "term_key": "gpu",
                         "description": "A specialized processor that handles graphics and visual effects."
                     },
                     {
                         "term": "Power Supply Unit (PSU)",
+                        "term_key": "psu",
                         "description": "Provides power to all the components in a computer."
                     },
                     {
                         "term": "Operating System (OS)",
+                        "term_key": "os",
                         "description": "Software that manages the computer's hardware and software resources, like Windows, macOS, or Linux."
                     },
                     {
                         "term": "Input Devices",
+                        "term_key": "input_devices",
                         "description": "Devices like keyboards and mice that allow you to interact with your computer."
                     },
                     {
                         "term": "Output Devices",
+                        "term_key": "output_devices",
                         "description": "Devices like monitors and printers that display or produce the results of computer processing."
                     },
                     {
                         "term": "BIOS (Basic Input/Output System)",
+                        "term_key": "bios",
                         "description": "The firmware that initializes and tests hardware during the booting process."
                     }
                 ]
@@ -61,42 +71,52 @@
                 "terms": [
                     {
                         "term": "URL (Uniform Resource Locator)",
+                        "term_key": "url",
                         "description": "The address used to access websites on the internet."
                     },
                     {
                         "term": "Web Browser",
+                        "term_key": "web_browser",
                         "description": "A software application used to access and view websites, like Chrome, Firefox, or Safari."
                     },
                     {
                         "term": "Search Engine",
+                        "term_key": "search_engine",
                         "description": "A tool that helps you find information on the internet, like Google or Bing."
                     },
                     {
                         "term": "Email",
+                        "term_key": "email",
                         "description": "A way to send and receive messages over the internet."
                     },
                     {
                         "term": "Wi-Fi",
+                        "term_key": "wifi",
                         "description": "A technology that allows devices to connect to the internet wirelessly."
                     },
                     {
                         "term": "Firewall",
+                        "term_key": "firewall",
                         "description": "A security system that controls the incoming and outgoing network traffic."
                     },
                     {
                         "term": "Cybersecurity",
+                        "term_key": "cybersecurity",
                         "description": "The practice of protecting computers and networks from digital attacks."
                     },
                     {
                         "term": "Cloud Storage",
+                        "term_key": "cloud_storage",
                         "description": "A way to store data online, so you can access it from any device connected to the internet."
                     },
                     {
                         "term": "IP Address",
+                        "term_key": "ip_address",
                         "description": "A unique address that identifies a device on the internet or a local network."
                     },
                     {
                         "term": "Cookies",
+                        "term_key": "cookies",
                         "description": "Small pieces of data stored by websites on your computer to remember your preferences."
                     }
                 ]
@@ -112,42 +132,52 @@
                 "terms": [
                     {
                         "term": "Algorithm",
+                        "term_key": "algorithm",
                         "description": "A step-by-step procedure or formula for solving a problem."
                     },
                     {
                         "term": "Programming Language",
+                        "term_key": "programming_language",
                         "description": "A formal language used to write instructions for a computer, like Python, Java, or JavaScript."
                     },
                     {
                         "term": "Source Code",
+                        "term_key": "source_code",
                         "description": "The set of instructions written by a programmer in a programming language."
                     },
                     {
                         "term": "Compiler",
+                        "term_key": "compiler",
                         "description": "A tool that translates source code into machine code that a computer can understand."
                     },
                     {
                         "term": "Debugger",
+                        "term_key": "debugger",
                         "description": "A tool that helps programmers find and fix errors in their code."
                     },
                     {
                         "term": "IDE (Integrated Development Environment)",
+                        "term_key": "ide",
                         "description": "A software application that provides tools to write, test, and debug code, like Visual Studio or PyCharm."
                     },
                     {
                         "term": "Version Control",
+                        "term_key": "version_control",
                         "description": "A system that tracks changes to code, allowing developers to collaborate, like Git."
                     },
                     {
                         "term": "API (Application Programming Interface)",
+                        "term_key": "api",
                         "description": "A set of tools and protocols for building software applications."
                     },
                     {
                         "term": "Software Bug",
+                        "term_key": "software_bug",
                         "description": "An error or flaw in a software program that causes it to behave unexpectedly."
                     },
                     {
                         "term": "Open Source",
+                        "term_key": "open_source",
                         "description": "Software that is freely available for anyone to use, modify, and distribute."
                     }
                 ]
@@ -163,44 +193,55 @@
                 "terms": [
                     {
                         "term": "Keyboard",
-                        "description": "A device used to input text and commands into a computer."
+                        "description": "A device used to input text and commands into a computer.",
+                        "term_key": "keyboard"
                     },
                     {
                         "term": "Mouse",
-                        "description": "A pointing device used to interact with items on a computer screen."
+                        "description": "A pointing device used to interact with items on a computer screen.",
+                        "term_key": "mouse"
                     },
                     {
                         "term": "Monitor",
-                        "description": "A display screen used to view computer output."
+                        "description": "A display screen used to view computer output.",
+                        "term_key": "monitor"
                     },
                     {
                         "term": "Printer",
-                        "description": "A device that produces a physical copy of digital documents."
+                        "description": "A device that produces a physical copy of digital documents.",
+                        "term_key": "printer"
                     },
                     {
                         "term": "USB (Universal Serial Bus)",
-                        "description": "A standard for connecting devices to a computer, such as keyboards, mice, and storage devices."
+                        "description": "A standard for connecting devices to a computer, such as keyboards, mice, and storage devices.",
+                        "term_key": "usb"
                     },
                     {
                         "term": "Router",
-                        "description": "A device that directs internet traffic between networks."
+                        "description": "A device that directs internet traffic between networks.",
+                        "term_key": "router"
                     },
                     {
                         "term": "SSD (Solid State Drive)",
-                        "description": "A faster, more reliable alternative to traditional hard drives for storing data."
+                        "description": "A faster, more reliable alternative to traditional hard drives for storing data.",
+                        "term_key": "ssd"
                     },
                     {
                         "term": "Graphics Card",
-                        "description": "A component that handles rendering images and video on a computer."
+                        "description": "A component that handles rendering images and video on a computer.",
+                        "term_key": "graphics_card"
                     },
                     {
                         "term": "Webcam",
-                        "description": "A camera used to capture video, often for video conferencing."
+                        "description": "A camera used to capture video, often for video conferencing.",
+                        "term_key": "webcam"
                     },
                     {
                         "term": "Headphones",
-                        "description": "A device worn over the ears to listen to audio privately."
+                        "description": "A device worn over the ears to listen to audio privately.",
+                        "term_key": "headphones"
                     }
+                    
                 ]
             }
         }

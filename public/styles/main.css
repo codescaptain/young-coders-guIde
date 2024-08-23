@@ -10,7 +10,7 @@
 
 .mainItem {
   display: flex;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
@@ -34,8 +34,8 @@
 .characterButton {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--light-text-color);
   text-decoration: none;
   border-radius: 5px;
   margin-top: 20px;
@@ -43,7 +43,7 @@
 }
 
 .characterButton:hover {
-  background-color: #0056b3;
+  background-color: var(--hover-color);
 }
 
 h1 {
@@ -66,10 +66,10 @@ li {
 
 .greetMessage {
   font-style: italic;
-  color: #4a4a4a;
+  color: var(--primary-color);
   font-size: 1.1em;
   margin-bottom: 15px;
-  border-left: 3px solid #007bff;
+  border-left: 3px solid var(--accent-color);
   padding-left: 10px;
 }
 

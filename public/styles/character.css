@@ -1,10 +1,12 @@
 body {
-  display: flex;
-  justify-content: center;
-  background-color: #f0f8ff;
+  background-color: var(--background-color);
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+}
+.centered {
+  display: flex;
+  justify-content: center;
 }
 
 .character-page {
@@ -12,7 +14,7 @@ body {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: white;
+  background-color: var(--light-text-color);
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
@@ -37,7 +39,7 @@ body {
 .character-image img {
   max-width: 100%;
   border-radius: 50%;
-  border: 5px solid #4a90e2;
+  border: 5px solid var(--primary-color);
 }
 
 .character-image.waving {
@@ -56,13 +58,13 @@ body {
 
 .greet-message {
   font-size: 1.2em;
-  color: #4a90e2;
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
 .wave-button, .quiz-button, .back-button, .certificate-button {
-  background-color: #4a90e2;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--light-text-color);
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
@@ -72,7 +74,7 @@ body {
 }
 
 .wave-button:hover, .quiz-button:hover, .back-button:hover, .certificate-button:hover {
-  background-color: #3a7bc8;
+  background-color: var(--hover-color);
 }
 
 .character-description {
@@ -82,7 +84,7 @@ body {
 }
 
 .terms-container {
-  background-color: white;
+  background-color: var(--light-text-color);
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -95,7 +97,7 @@ body {
 }
 
 .term-item {
-  background-color: #e9f2fe;
+  background-color: var(--background-color);
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 8px;
@@ -104,12 +106,12 @@ body {
 }
 
 .term-item:hover {
-  background-color: #d4e5fd;
+  background-color: var(--border-color);
 }
 
 .term-item.active {
-  background-color: #4a90e2;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
 }
 
 .term-item strong {
@@ -144,13 +146,13 @@ body {
 }
 
 .quiz-button {
-  background-color: #4a90e2;
+  background-color: var(--accent-color);
   color: white;
 }
 
 .certificate-button {
-  background-color: #ffd700;
-  color: #333;
+  background-color: var(--secondary-color);
+  color: var(--light-text-color);
 }
 
 .quiz-button:hover, .certificate-button:hover {
@@ -176,7 +178,7 @@ body {
 
 .progress-bar {
   height: 100%;
-  background-color: #4a90e2;
+  background-color: var(--accent-color);
   transition: width 0.3s ease-in-out;
 }
 
@@ -196,7 +198,7 @@ body {
 
 .quiz-options button {
   padding: 10px;
-  background-color: #e9f2fe;
+  background-color: var(--background-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -204,7 +206,7 @@ body {
 }
 
 .quiz-options button:hover {
-  background-color: #d4e5fd;
+  background-color: var(--border-color);
 }
 
 .quiz-result {
@@ -259,8 +261,8 @@ body {
 }
 
 .certificate {
-  background-color: #f9f9f9;
-  border: 2px solid #4a90e2;
+  background-color: var(--light-text-color);
+  border: 2px solid var(--primary-color);
   border-radius: 10px;
   padding: 20px;
   margin: 20px auto;
@@ -277,7 +279,7 @@ body {
 }
 
 .certificate h2 {
-  color: #4a90e2;
+  color: var(--primary-color);
   font-size: 24px;
   margin-bottom: 20px;
 }

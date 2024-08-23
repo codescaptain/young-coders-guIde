@@ -1,0 +1,190 @@
+{
+  "toby_tech": {
+    "name": "Toby Tech",
+    "greet_message": "👋 Hello there, young explorer!",
+    "description": "I’m Toby Tech, and I’m thrilled to be your guide on this exciting journey into the world of computers! 🌟 In this chapter, we’ll uncover the essential computer terms and components that make up the incredible machines we use every day. Whether you’re curious about how computers work or just want to learn some new words, you’re in the right place. I’ll be here to help you understand these terms in a fun and simple way. Ready to dive in? Let’s get started!",
+    "terms": {
+      "cpu": {
+        "term": "CPU (Central Processing Unit)",
+        "description": "The brain of the computer that performs most of the processing inside a computer."
+      },
+      "ram": {
+        "term": "RAM (Random Access Memory)",
+        "description": "A type of computer memory that is used to store data temporarily while the computer is running."
+      },
+      "hard_drive": {
+        "term": "Hard Drive",
+        "description": "The component that stores all your data, like documents, pictures, and programs."
+      },
+      "motherboard": {
+        "term": "Motherboard",
+        "description": "The main circuit board that holds the CPU, memory, and other essential components."
+      },
+      "gpu": {
+        "term": "GPU (Graphics Processing Unit)",
+        "description": "A specialized processor that handles graphics and visual effects."
+      },
+      "psu": {
+        "term": "Power Supply Unit (PSU)",
+        "description": "Provides power to all the components in a computer."
+      },
+      "os": {
+        "term": "Operating System (OS)",
+        "description": "Software that manages the computer's hardware and software resources, like Windows, macOS, or Linux."
+      },
+      "input_devices": {
+        "term": "Input Devices",
+        "description": "Devices like keyboards and mice that allow you to interact with your computer."
+      },
+      "output_devices": {
+        "term": "Output Devices",
+        "description": "Devices like monitors and printers that display or produce the results of computer processing."
+      },
+      "bios": {
+        "term": "BIOS (Basic Input/Output System)",
+        "description": "The firmware that initializes and tests hardware during the booting process."
+      }
+    }
+  },
+  "ivy_internet": {
+    "name": "Ivy Internet",
+    "greet_message": "🌐 Hello, digital adventurer!",
+    "description": "I’m Ivy Internet, and I'm thrilled to be your guide on an exciting journey through the vast world of the internet! 🌍 In this chapter, we’ll explore key terms and concepts related to the internet. From web browsers to URLs and online safety, we’ll uncover how the internet works and how to navigate it safely. Are you ready to dive into the digital realm? Let’s get started and discover the wonders of the internet together!",
+    "terms": {
+      "url": {
+        "term": "URL (Uniform Resource Locator)",
+        "description": "The address used to access websites on the internet."
+      },
+      "web_browser": {
+        "term": "Web Browser",
+        "description": "A software application used to access and view websites, like Chrome, Firefox, or Safari."
+      },
+      "search_engine": {
+        "term": "Search Engine",
+        "description": "A tool that helps you find information on the internet, like Google or Bing."
+      },
+      "email": {
+        "term": "Email",
+        "description": "A way to send and receive messages over the internet."
+      },
+      "wifi": {
+        "term": "Wi-Fi",
+        "description": "A technology that allows devices to connect to the internet wirelessly."
+      },
+      "firewall": {
+        "term": "Firewall",
+        "description": "A security system that controls the incoming and outgoing network traffic."
+      },
+      "cybersecurity": {
+        "term": "Cybersecurity",
+        "description": "The practice of protecting computers and networks from digital attacks."
+      },
+      "cloud_storage": {
+        "term": "Cloud Storage",
+        "description": "A way to store data online, so you can access it from any device connected to the internet."
+      },
+      "ip_address": {
+        "term": "IP Address",
+        "description": "A unique address that identifies a device on the internet or a local network."
+      },
+      "cookies": {
+        "term": "Cookies",
+        "description": "Small pieces of data stored by websites on your computer to remember your preferences."
+      }
+    }
+  },
+  "sammy_script": {
+    "name": "Sammy Script",
+    "greet_message": "👨‍💻 Hey there, future coder!",
+    "description": "I'm Sammy Script, your trusty guide in the world of software and programming! 🚀 In this chapter, we're going to dive into some cool terms that every young programmer should know. Whether you’re just starting out or already tinkering with code, these terms will help you understand how software works and how to write your own programs. Are you ready to explore the fascinating world of coding? Let’s roll up our sleeves and get started!",
+    "terms": {
+      "algorithm": {
+        "term": "Algorithm",
+        "description": "A step-by-step procedure or formula for solving a problem."
+      },
+      "programming_language": {
+        "term": "Programming Language",
+        "description": "A formal language used to write instructions for a computer, like Python, Java, or JavaScript."
+      },
+      "source_code": {
+        "term": "Source Code",
+        "description": "The set of instructions written by a programmer in a programming language."
+      },
+      "compiler": {
+        "term": "Compiler",
+        "description": "A tool that translates source code into machine code that a computer can understand."
+      },
+      "debugger": {
+        "term": "Debugger",
+        "description": "A tool that helps programmers find and fix errors in their code."
+      },
+      "ide": {
+        "term": "IDE (Integrated Development Environment)",
+        "description": "A software application that provides tools to write, test, and debug code, like Visual Studio or PyCharm."
+      },
+      "version_control": {
+        "term": "Version Control",
+        "description": "A system that tracks changes to code, allowing developers to collaborate, like Git."
+      },
+      "api": {
+        "term": "API (Application Programming Interface)",
+        "description": "A set of tools and protocols for building software applications."
+      },
+      "software_bug": {
+        "term": "Software Bug",
+        "description": "An error or flaw in a software program that causes it to behave unexpectedly."
+      },
+      "open_source": {
+        "term": "Open Source",
+        "description": "Software that is freely available for anyone to use, modify, and distribute."
+      }
+    }
+  },
+  "danny_device": {
+    "name": "Danny Device",
+    "greet_message": "🔧 Hello, tech explorers!",
+    "description": "I'm Danny Device, your guide to all things hardware! 🌟 In this chapter, we’re going to explore the physical parts of a computer and other cool devices you use every day. From keyboards to screens, and even the tiny chips inside, we’ll learn what makes your gadgets tick. Let’s open up the tech world together and see what’s inside! Ready to dive into the world of devices? Let’s get started!",
+    "terms": {
+      "keyboard": {
+          "term": "Keyboard",
+          "description": "A device used to input text and commands into a computer."
+      },
+      "mouse": {
+          "term": "Mouse",
+          "description": "A pointing device used to interact with items on a computer screen."
+      },
+      "monitor": {
+          "term": "Monitor",
+          "description": "A screen used to display computer output."
+      },
+      "printer": {
+          "term": "Printer",
+          "description": "A device that prints digital information onto paper."
+      },
+      "usb": {
+          "term": "USB (Universal Serial Bus)",
+          "description": "A standard for connecting devices like keyboards, mice, and storage devices to a computer."
+      },
+      "router": {
+          "term": "Router",
+          "description": "A device that directs internet traffic between networks."
+      },
+      "ssd": {
+          "term": "SSD (Solid State Drive)",
+          "description": "A faster and more reliable alternative to traditional hard drives for storing data."
+      },
+      "graphics_card": {
+          "term": "Graphics Card",
+          "description": "A component that processes images and videos on a computer."
+      },
+      "webcam": {
+          "term": "Webcam",
+          "description": "A camera used for video calls and recordings."
+      },
+      "headphones": {
+          "term": "Headphones",
+          "description": "A device worn over the ears to listen to audio privately."
+      }
+  }
+  }
+}

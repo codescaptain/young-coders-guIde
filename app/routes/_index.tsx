@@ -1,6 +1,7 @@
 import type { LinksFunction, MetaFunction, LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData, Link } from "@remix-run/react";
+import { useTranslation } from "react-i18next";
 import youngCodersGuide from "~/data/young_coders_guide.json";
 
 export const meta: MetaFunction = () => {
@@ -21,10 +22,16 @@ export const loader: LoaderFunction = async () => {
 export default function Index() {
   const chapters = useLoaderData<typeof loader>();
 
+  const character_name = (name:String): String => {
+    return name.toLowerCase().replace(' ', '_');
+  }
+
+  const { t } = useTranslation(['common', 'term']);
+
   return (
     <div className="main">
       <div className="container">
-        {chapters.map((chapter, index) => (
+        {chapters.map((chapter: any, index: any) => (
           <div key={index} className="mainItem">
             <div className="characterImage">
               <img 
@@ -37,7 +44,7 @@ export default function Index() {
               <p className="greetMessage">{chapter.character.greet_message}</p>
               <p>{chapter.character.description}</p>
               <Link to={`/characters/${chapter.character.name.toLowerCase().replace(" ", "-")}`} className="characterButton">
-                Learn More About {chapter.character.name}
+                {t('learn_more_about', { name: chapter.character.name })}
               </Link>
             </div>
           </div>
