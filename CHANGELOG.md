@@ -1,5 +1,25 @@
 # Changelog
 
+## 2023-08-24
+
+### Added
+- Created a new "Games" section on the homepage.
+- Implemented a new GamesSection component.
+- Added Shadow Matching Game with drag-and-drop functionality.
+- Introduced new game cards for various coding games.
+
+### Changed
+- Updated _index.tsx to include the new GamesSection component.
+- Enhanced homepage layout with the addition of the Games section.
+
+### Improved
+- Expanded the educational content with interactive game elements.
+- Enhanced user engagement through gamification of coding concepts.
+
+### Updated
+- Modified homepage.css to include styles for the new Games section and game cards.
+- Adjusted ShapeMatchingGame.tsx for improved gameplay and larger image sizes.
+
 ## 2023-08-23
 
 ### Added
