@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { TouchBackend } from 'react-dnd-touch-backend';
+import { isTouchDevice } from '~/utils/isTouchDevice';
 
 interface Item {
   id: string;
@@ -27,7 +29,7 @@ const DraggableItem: React.FC<{ item: Item; isMatched: boolean }> = ({ item, isM
     <div
       ref={drag}
       className={`item ${isDragging ? 'dragging' : ''} ${isMatched ? 'matched' : ''}`}
-      style={{ opacity: isDragging ? 0.5 : 1 }}
+      style={{ opacity: isDragging ? 0.5 : 1, touchAction: 'none' }}
     >
       <img src={item.image} alt="Item" />
     </div>
@@ -55,7 +57,7 @@ const ShadowTarget: React.FC<{ item: Item; onDrop: (id: string) => void; isMatch
   );
 };
 
-const shuffleArray = (array: any[]) => {
+const shuffleArray = <T extends any>(array: T[]): T[] => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -66,17 +68,18 @@ const shuffleArray = (array: any[]) => {
 
 const ShadowMatchingGame: React.FC = () => {
   const [items] = useState(initialItems);
-  const [shadows, setShadows] = useState(shuffleArray(initialItems));
+  const [shadows, setShadows] = useState<Item[]>([]);
   const [matches, setMatches] = useState<string[]>([]);
 
   useEffect(() => {
-    setShadows(shuffleArray(initialItems));
-  }, []);
+    setShadows(shuffleArray([...items]));
+  }, [items]);
 
   const handleDrop = useCallback((shadowId: string, droppedItemId: string) => {
     if (shadowId === droppedItemId) {
       setMatches(prevMatches => {
         const newMatches = [...prevMatches, shadowId];
+        console.log('Updated matches:', newMatches);
         return newMatches;
       });
     }
@@ -91,8 +94,10 @@ const ShadowMatchingGame: React.FC = () => {
     }
   }, [matches, items]);
 
+  const backendForDND = isTouchDevice() ? TouchBackend : HTML5Backend;
+
   return (
-    <DndProvider backend={HTML5Backend}>
+    <DndProvider backend={backendForDND}>
       <div className="shadow-matching-game">
         <h2>Gölge Eşleştirme</h2>
         <p>Resmi eşleşen gölgeye sürükleyip bırakın.</p>
@@ -103,12 +108,12 @@ const ShadowMatchingGame: React.FC = () => {
             ))}
           </div>
           <div className="shadows-column">
-            {shadows.map(item => (
+            {shadows.map(shadow => (
               <ShadowTarget 
-                key={item.id} 
-                item={item} 
-                onDrop={(droppedItemId) => handleDrop(item.id, droppedItemId)}
-                isMatched={isMatched(item.id)}
+                key={shadow.id} 
+                item={shadow} 
+                onDrop={(droppedItemId) => handleDrop(shadow.id, droppedItemId)}
+                isMatched={isMatched(shadow.id)}
               />
             ))}
           </div>
