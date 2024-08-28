@@ -39,6 +39,8 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    touch-action: none;
+    user-select: none;
   }
   
   .item {
@@ -92,5 +94,16 @@
     .item, .shadow {
       width: 150px;
       height: 150px;
+    }
+  }
+  
+  /* Dokunmatik cihazlar için ek stiller */
+  @media (hover: none) and (pointer: coarse) {
+    .item, .shadow {
+      cursor: grab;
+    }
+  
+    .item:active, .shadow:active {
+      cursor: grabbing;
     }
   }
