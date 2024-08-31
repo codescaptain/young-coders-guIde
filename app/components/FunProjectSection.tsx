@@ -1,46 +1,62 @@
-import React from 'react';
+import React, { useRef } from 'react'; import { useTranslation, Trans } from 'react-i18next';
 
 const FunProjectSection: React.FC = () => {
+  const { t } = useTranslation();
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const handleScrollToCharacters = () => {
+    const charactersSection = document.getElementById('characters');
+    if (charactersSection) {
+      charactersSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="fun-project-section">
       <div className="parallax-bg"></div>
       <div className="container">
-        <h2 className="project-title">Kodlama Macerası</h2>
-        
+        <h2 className="project-title">{t("young_coders_guide")}</h2>
+
         <div className="project-description top">
-          <p>Bizimle birlikte teknolojinin renkli dünyasına adım at! "Çocuklar için Teknoloji Eğitimi" web sitemiz, 6-12 yaş arası çocuklara yönelik olarak tasarlanmıştır ve bilgisayar bilimi, programlama, robotik ve dijital tasarım gibi temel teknoloji konularını eğlenceli ve etkileşimli bir şekilde öğretmeyi amaçlar.</p>
-          <p>Projemiz, çocukların teknolojiyi sadece kullanıcı olarak değil, aynı zamanda yaratıcı olarak da deneyimlemelerini sağlayacak şekilde kurgulanmıştır. Eğitim modüllerimiz, çocukların eleştirel düşünme, problem çözme ve yaratıcı becerilerini geliştirmeye odaklanırken, onlara bilgisayar dünyasının kapılarını aralar.</p>
+          <p>{t("project_description_top")}</p>
+          <p>{t("project_description_top_2")}</p>
         </div>
 
         <div className="features">
           <div className="feature-card">
             <div className="feature-icon">🧠</div>
-            <h3 className="feature-title">Eğlenceli Öğrenme</h3>
-            <p className="feature-description">Oyunlar ve interaktif görevlerle kodlamayı keyifle öğren!</p>
+            <h3 className="feature-title">{t("feature_fun_learning_title")}</h3>
+            <p className="feature-description">{t("feature_fun_learning_description")}</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">🏆</div>
-            <h3 className="feature-title">Seviye Atlama</h3>
-            <p className="feature-description">Başarılarınla seviye atla ve yeni zorluklarla karşılaş!</p>
+            <h3 className="feature-title">{t("feature_level_up_title")}</h3>
+            <p className="feature-description">{t("feature_level_up_description")}</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">🤖</div>
-            <h3 className="feature-title">Kendi Robotunu Yap</h3>
-            <p className="feature-description">Öğrendiklerinle kendi robotunu programla ve kontrol et!</p>
+            <h3 className="feature-title">{t("feature_build_robot_title")}</h3>
+            <p className="feature-description">{t("feature_build_robot_description")}</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">👥</div>
-            <h3 className="feature-title">Arkadaşlarınla Yarış</h3>
-            <p className="feature-description">Çoklu oyuncu modunda arkadaşlarınla yarış ve eğlen!</p>
+            <h3 className="feature-title">{t("feature_compete_friends_title")}</h3>
+            <p className="feature-description">{t("feature_compete_friends_description")}</p>
           </div>
         </div>
 
         <div className="project-description bottom">
-          <p>Sitemiz, çocukların yeni şeyler öğrenirken eğlenmelerini ve aynı zamanda teknolojiyi güvenli bir şekilde kullanmayı öğrenmelerini sağlamak için tasarlanmıştır. Her ders, çocukların kendi hızlarında ilerleyebilecekleri şekilde yapılandırılmıştır, böylece her çocuk kendi ilgi ve yetenek düzeyine uygun deneyimler edinebilir.</p>
-          <p><strong>Katılın ve Keşfedin!</strong> Çocuğunuzun teknoloji ile iç içe büyümesine ve onun büyülü dünyasında eğlenirken öğrenmesine şimdi başlayın. Projemize katılarak, çocuğunuzun yaratıcı potansiyelini keşfetmesine ve 21. yüzyıl becerilerini geliştirmesine yardımcı olun.</p>
+          <p>{t("project_description_bottom")}</p>
+          <p><Trans i18nKey="project_description_bottom_2" /></p>
         </div>
 
-        <a href="#" className="cta-button">Hemen Başla!</a>
+        <button
+          className="cta-button"
+          ref={buttonRef}
+          onClick={handleScrollToCharacters}
+        >
+          {t('start_now')} !
+        </button>
       </div>
     </section>
   );

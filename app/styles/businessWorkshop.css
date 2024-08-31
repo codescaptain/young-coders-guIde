@@ -1,0 +1,286 @@
+.bw-section {
+  padding: 4rem 2rem;
+  background-color: var(--background-color);
+  position: relative;
+  overflow: hidden;
+  font-family: var(--primary-font);
+}
+
+.bw-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.bw-content {
+  flex: 1;
+  max-width: 500px;
+  margin-right: 2rem;
+}
+
+.bw-title {
+  font-size: var(--title-font-size);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.bw-subtitle {
+  font-size: var(--heading-font-size);
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  font-family: var(--secondary-font);
+}
+
+.bw-description {
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  font-size: var(--body-font-size);
+}
+
+.bw-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.bw-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: var(--body-font-size);
+}
+
+.bw-btn-primary {
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  border: none;
+}
+
+.bw-btn-secondary {
+  background-color: var(--light-text-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.bw-btn-primary:hover {
+  background-color: var(--hover-color);
+}
+
+.bw-btn-secondary:hover {
+  background-color: var(--background-color);
+}
+
+.bw-image-container {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.bw-image-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 8px solid var(--secondary-color);
+}
+
+.bw-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bw-decoration {
+  position: absolute;
+  transition: transform 0.1s ease-out;
+}
+
+.bw-gear {
+  top: -20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.bw-robot {
+  width: 60px;
+  height: 60px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  top: -30px;
+  right: 80px;
+}
+
+.bw-code {
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent-color);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  bottom: 50px;
+  right: -20px;
+}
+
+.bw-lightbulb {
+  width: 40px;
+  height: 60px;
+  background-color: var(--secondary-color);
+  border-radius: 50% 50% 5px 5px;
+  top: 100px;
+  left: -30px;
+}
+
+.bw-rocket {
+  width: 30px;
+  height: 70px;
+  background-color: var(--primary-color);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  bottom: -20px;
+  left: 100px;
+  transform: rotate(45deg);
+}
+
+.bw-animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bw-animated-shape {
+  position: absolute;
+  opacity: 0.1;
+  width: 30px;
+  height: 30px;
+}
+
+.bw-animated-shape.bw-circle {
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+.bw-animated-shape.bw-square {
+  background-color: var(--secondary-color);
+}
+
+.bw-animated-shape.bw-triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid var(--accent-color);
+}
+
+.bw-animated-shape.bw-cross {
+  position: relative;
+}
+
+.bw-animated-shape.bw-cross::before,
+.bw-animated-shape.bw-cross::after {
+  content: '';
+  position: absolute;
+  background-color: var(--primary-color);
+}
+
+.bw-animated-shape.bw-cross::before {
+  width: 100%;
+  height: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bw-animated-shape.bw-cross::after {
+  width: 6px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bw-animated-shape.bw-star {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background-color: var(--secondary-color);
+}
+
+.bw-animated-shape.bw-hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: var(--accent-color);
+}
+
+.bw-animated-shape.bw-diamond {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  background-color: var(--primary-color);
+}
+
+.bw-animated-shape.bw-rectangle {
+  width: 40px;
+  height: 20px;
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .bw-container {
+    flex-direction: column;
+  }
+
+  .bw-content,
+  .bw-image-container {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .bw-image-wrapper {
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+  }
+
+  .bw-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bw-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .bw-title {
+    font-size: calc(var(--title-font-size) * 0.8);
+  }
+
+  .bw-subtitle {
+    font-size: calc(var(--heading-font-size) * 0.9);
+  }
+
+  .bw-decoration {
+    transform: scale(0.8);
+  }
+}
+
+.bw-btn-primary {
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: var(--body-font-size);
+}
+
+.bw-btn-primary:hover {
+  background-color: var(--hover-color);
+}
