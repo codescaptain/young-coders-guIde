@@ -49,5 +49,16 @@
   "feature_compete_friends_description": "Race and have fun with friends in multiplayer mode!",
   "project_description_bottom": "Our site is designed to ensure that children have fun while learning new things and also learn to use technology safely. Each lesson is structured so that children can progress at their own pace, allowing them to have experiences that match their interests and skill levels.",
   "project_description_bottom_2": "<strong>Join and Discover!</strong> Start now to help your child grow up with technology and learn while having fun in its magical world. By joining our project, you will help your child discover their creative potential and develop 21st-century skills.",
-  "cta_button_text": "Start Now!"
+  "cta_button_text": "Start Now!",
+  "body_parts": "Body Parts",
+  "face_accessories": "Face Accessories",
+  "hide_parts": "Hide Parts",
+  "download_colored": "Download with Color",
+  "download_outline": "Download without Color",
+  "build_your_robot": "Build Your Robot",
+  "right_leg": "Right Leg",
+  "left_leg": "Left Leg",
+  "right_arm": "Right Hand",
+  "left_arm": "Left Hand",
+  "games": "Games"
 }

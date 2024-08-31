@@ -49,5 +49,17 @@
   "feature_compete_friends_description": "Çoklu oyuncu modunda arkadaşlarınla yarış ve eğlen!",
   "project_description_bottom": "Sitemiz, çocukların yeni şeyler öğrenirken eğlenmelerini ve aynı zamanda teknolojiyi güvenli bir şekilde kullanmayı öğrenmelerini sağlamak için tasarlanmıştır. Her ders, çocukların kendi hızlarında ilerleyebilecekleri şekilde yapılandırılmıştır, böylece her çocuk kendi ilgi ve yetenek düzeyine uygun deneyimler edinebilir.",
   "project_description_bottom_2": "<strong>Katılın ve Keşfedin!</strong> Çocuğunuzun teknoloji ile iç içe büyümesine ve onun büyülü dünyasında eğlenirken öğrenmesine şimdi başlayın. Projemize katılarak, çocuğunuzun yaratıcı potansiyelini keşfetmesine ve 21. yüzyıl becerilerini geliştirmesine yardımcı olun.",
-  "cta_button_text": "Hemen Başla!"
+  "cta_button_text": "Hemen Başla!",
+  "body_parts": "Vücut Parçaları",
+  "face_accessories": "Yüz Aksesuarları",
+  "hide_parts": "Parçaları Gizle",
+  "download_colored": "Renkli İndir",
+  "download_outline": "Renksiz İndir",
+  "build_your_robot": "Kendi Robotunu Yap",
+  "right_leg": "Sağ Bacak",
+  "left_leg": "Sol Bacak",
+  "right_arm": "Sağ Kol",
+  "left_arm": "Sol Kol",
+  "games": "Oyunlar"
+  
 }
