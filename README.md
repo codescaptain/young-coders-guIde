@@ -3,22 +3,6 @@
 
 Welcome to the **Young Coders' Guide** project! This educational platform is designed to introduce kids to the exciting world of technology, programming, and the internet. Through engaging quizzes and interactive learning experiences, children can explore various tech-related topics, earn certificates, and enjoy learning with our fun characters.
 
-## 🚀 Project Overview
-<img width="754" alt="Screenshot 2024-08-28 at 12 21 54" src="https://github.com/user-attachments/assets/ed735785-72f0-4c30-a82c-a7b4e99f8317">
-<img width="754" alt="Screenshot 2024-08-28 at 12 22 17" src="https://github.com/user-attachments/assets/ca14f461-36c8-4aab-aa28-8bf4237a549d">
-<img width="754" alt="Screenshot 2024-08-21 at 11 25 07" src="https://github.com/user-attachments/assets/49e4e3bc-c27d-47ba-86ab-160c2f588763">
-<img width="754" alt="Screenshot 2024-08-21 at 11 25 15" src="https://github.com/user-attachments/assets/40f00e8a-287b-4d81-a0fb-ae078a5d89ae">
-<img width="754" alt="Screenshot 2024-08-21 at 11 27 13" src="https://github.com/user-attachments/assets/f847b4fc-7679-4371-902b-6dd91f02f7ae">
-<img width="754" alt="Screenshot 2024-08-21 at 11 27 27" src="https://github.com/user-attachments/assets/925c96e5-63fb-4cef-8275-a06b75087519">
-<img width="754" alt="Screenshot 2024-08-28 at 12 22 32" src="https://github.com/user-attachments/assets/9f83beb3-3369-4610-91c4-36aa9ad7f82a">
-<img width="754" alt="Screenshot 2024-08-28 at 12 22 26" src="https://github.com/user-attachments/assets/ed71c8ca-7c66-4563-9e15-dc9573af5ab7">
-
-
-
-
-
-
-
 **Young Coders' Guide** is an interactive web platform aimed at young learners, featuring four main chapters, each led by a unique character:
 
 - **Chapter 1: Computer-Related Terms** - Guided by Toby Tech
