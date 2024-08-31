@@ -1,5 +1,11 @@
 # Changelog
 
+## 2023-08-31
+
+### Added
+- Robot builder game
+- All games section in homepage
+
 ## 2023-08-24
 
 ### Added
