@@ -1,0 +1,118 @@
+.choose-character {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.choose-character {
+    position: relative;
+    background-image: url('/images/bg-character-section.jpg'); /* Arka plan resminizi buraya ekleyin */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 20px;
+    min-height: 100vh; /* En az tam ekran yüksekliği */
+}
+
+.choose-character::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5); /* Yarı saydam beyaz arka plan */
+    z-index: 1;
+}
+
+.choose-character-content {
+    position: relative;
+    z-index: 2; /* İçeriği arka plan örtüsünün üzerine getir */
+}
+
+.choose-character h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.character-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.character-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.character-card img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 5px solid #f0f0f0;
+}
+
+.character-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.character-card p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #34495e;
+    line-height: 1.6;
+}
+
+.character-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+.character-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .character-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .character-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .choose-character {
+        padding: 50px 20px;
+    }
+}

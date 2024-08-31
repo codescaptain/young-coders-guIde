@@ -7,4 +7,10 @@
   --light-text-color: #FFFFFF; /* Beyaz - Açık metin rengi */
   --border-color: #E0E0E0;     /* Açık gri - Kenarlık rengi */
   --hover-color: #3A7BC8;      /* Koyu mavi - Hover efekti için */
+
+  --primary-font: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', 'Purisa', 'Humor Sans', cursive, sans-serif;
+  --secondary-font: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+  --body-font-size: 16px;
+  --heading-font-size: 24px;
+  --title-font-size: 36px;
 }
