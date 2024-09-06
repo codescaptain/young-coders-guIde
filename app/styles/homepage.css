@@ -128,7 +128,7 @@
 .fun-project-section {
     position: relative;
     padding: 50px 20px;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: var(--primary-font);
     overflow: hidden;
 }
 

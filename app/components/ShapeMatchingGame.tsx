@@ -3,16 +3,22 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 import { isTouchDevice } from '~/utils/isTouchDevice';
+import { useTranslation } from 'react-i18next'; // Çeviri hook'unu ekledik
 
 interface Item {
   id: string;
   image: string;
   shadow: string;
+  category: string;
 }
 
 const initialItems: Item[] = [
-  { id: '1', image: '/images/shape/d1.jpg', shadow: '/images/shape/d1-shadow.jpg' },
-  { id: '2', image: '/images/shape/d2.jpg', shadow: '/images/shape/d2-shadow.jpg' },
+  { id: '1', image: '/images/shape/d1.jpg', shadow: '/images/shape/d1-shadow.jpg', category: 'animal' },
+  { id: '2', image: '/images/shape/d2.jpg', shadow: '/images/shape/d2-shadow.jpg', category: 'animal' },
+  { id: '3', image: '/images/shape/banana.jpg', shadow: '/images/shape/banana_shadow.jpg', category: 'fruit' },
+  { id: '4', image: '/images/shape/strawberry.jpg', shadow: '/images/shape/strawberry_shadow.jpg', category: 'fruit' },
+  { id: '5', image: '/images/shape/chair.jpg', shadow: '/images/shape/chair_shadow.jpg', category: 'object' },
+  { id: '6', image: '/images/shape/pencil.jpg', shadow: '/images/shape/pencil_shadow.jpg', category: 'object' },
 ];
 
 const DraggableItem: React.FC<{ item: Item; isMatched: boolean }> = ({ item, isMatched }) => {
@@ -48,12 +54,37 @@ const ShadowTarget: React.FC<{ item: Item; onDrop: (id: string) => void; isMatch
 
   return (
     <div
-      style={{backgroundColor: 'white'}}
+      style={{ backgroundColor: 'white' }}
       ref={drop}
       className={`shadow ${isOver ? 'over' : ''} ${isMatched ? 'matched' : ''}`}
     >
       <img src={item.shadow} alt="Shadow" />
     </div>
+  );
+};
+
+
+const CategoryButton: React.FC<{ category: string; onClick: () => void }> = ({ category, onClick }) => {
+  const { t } = useTranslation();
+
+  const getIcon = () => {
+    switch (category) {
+      case 'animal':
+        return '🐘';
+      case 'fruit':
+        return '🍎';
+      case 'object':
+        return '🪑';
+      default:
+        return '❓';
+    }
+  };
+
+  return (
+    <button className={`category-button ${category}`} onClick={onClick}>
+      <span className="category-icon">{getIcon()}</span>
+      <span className="category-label">{t(`categories.${category}`, { defaultValue: t('categories.unknown') })}</span>
+    </button>
   );
 };
 
@@ -67,9 +98,20 @@ const shuffleArray = <T extends any>(array: T[]): T[] => {
 };
 
 const ShadowMatchingGame: React.FC = () => {
-  const [items] = useState(initialItems);
+  const { t } = useTranslation(); // Çeviri hook'unu kullandık
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [items, setItems] = useState<Item[]>([]);
   const [shadows, setShadows] = useState<Item[]>([]);
   const [matches, setMatches] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (selectedCategory) {
+      const filteredItems = initialItems.filter(item => item.category === selectedCategory);
+      setItems(shuffleArray(filteredItems));
+    } else {
+      setItems([]);
+    }
+  }, [selectedCategory]);
 
   useEffect(() => {
     setShadows(shuffleArray([...items]));
@@ -89,37 +131,62 @@ const ShadowMatchingGame: React.FC = () => {
 
   useEffect(() => {
     console.log('Current matches:', matches);
-    if (matches.length === items.length) {
+    if (matches.length === items.length && items.length > 0) {
       console.log('All items matched!');
     }
   }, [matches, items]);
 
+  const handleCategorySelect = (category: string) => {
+    setSelectedCategory(category);
+    setMatches([]);
+  };
+
   const backendForDND = isTouchDevice() ? TouchBackend : HTML5Backend;
+
+  console.log(selectedCategory);
+
 
   return (
     <DndProvider backend={backendForDND}>
       <div className="shadow-matching-game">
-        <h2>Gölge Eşleştirme</h2>
-        <p>Resmi eşleşen gölgeye sürükleyip bırakın.</p>
-        <div className="game-container">
-          <div className="items-column">
-            {items.map(item => (
-              <DraggableItem key={item.id} item={item} isMatched={isMatched(item.id)} />
-            ))}
+        <h2>{t('shadow_matching')}</h2>
+        {!selectedCategory ? (
+          <div className="category-selection">
+            <h3>{t('please_select_category')}</h3>
+            <div className="category-buttons">
+              <CategoryButton category="animal" onClick={() => handleCategorySelect('animal')} />
+              <CategoryButton category="fruit" onClick={() => handleCategorySelect('fruit')} />
+              <CategoryButton category="object" onClick={() => handleCategorySelect('object')} />
+            </div>
           </div>
-          <div className="shadows-column">
-            {shadows.map(shadow => (
-              <ShadowTarget 
-                key={shadow.id} 
-                item={shadow} 
-                onDrop={(droppedItemId) => handleDrop(shadow.id, droppedItemId)}
-                isMatched={isMatched(shadow.id)}
-              />
-            ))}
-          </div>
-        </div>
-        {matches.length === items.length && (
-          <div className="success-message">Tebrikler! Tüm eşleştirmeleri başarıyla tamamladınız!</div>
+        ) : (
+          <>
+            <p>{t('drag_and_drop')}</p>
+            <p>{t('category')}: {t(`categories.${selectedCategory}`)}</p>
+            <div className="game-container">
+              <div className="items-column">
+                {items.map(item => (
+                  <DraggableItem key={item.id} item={item} isMatched={isMatched(item.id)} />
+                ))}
+              </div>
+              <div className="shadows-column">
+                {shadows.map(shadow => (
+                  <ShadowTarget
+                    key={shadow.id}
+                    item={shadow}
+                    onDrop={(droppedItemId) => handleDrop(shadow.id, droppedItemId)}
+                    isMatched={isMatched(shadow.id)}
+                  />
+                ))}
+              </div>
+            </div>
+            {matches.length === items.length && items.length > 0 && (
+              <div className="success-message">
+                {t('congratulations')}
+                <button onClick={() => setSelectedCategory(null)}>{t('select_new_category')}</button>
+              </div>
+            )}
+          </>
         )}
       </div>
     </DndProvider>

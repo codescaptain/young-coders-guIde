@@ -60,5 +60,28 @@
   "left_leg": "Left Leg",
   "right_arm": "Right Hand",
   "left_arm": "Left Hand",
-  "games": "Games"
+  "games": "Games",
+  "shadow_matching": "Shadow Matching",
+  "please_select_category": "Please select a category:",
+  "category": "Category",
+  "drag_and_drop": "Drag and drop the image to the matching shadow.",
+  "congratulations": "Congratulations! You have successfully completed all matches!",
+  "select_new_category": "Select a New Category",
+  "categories": {
+    "animal": "Animals",
+    "fruit": "Fruits",
+    "object": "Objects",
+    "unknown": "Unknown"
+  },
+  "fruitAdventureTitle": "Fruit Adventure",
+  "fruitAdventureInstructions": "Collect all the fruits by navigating through the maze!",
+  "go": "Go",
+  "invalidMove": "Invalid move! You can't go there.",
+  "hitWall": "You hit a wall!",
+  "notReachedExit": "You didn't reach the exit.",
+  "gameWon": "Congratulations! You've reached the end!",
+  "gameLost": "You lost the game!",
+  "startNewGame": "Start a New Game",
+  "outOfBoundsOrHitWall": "You have stepped outside the labyrinth boundaries or hit a wall!"
+
 }

@@ -1,109 +1,322 @@
 .shadow-matching-game {
-    margin-top: 30px;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.shadow-matching-game h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.shadow-matching-game p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.game-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.items-column, .shadows-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.item, .shadow {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  touch-action: none;
+  user-select: none;
+}
+
+.item {
+  cursor: move;
+}
+
+.item img, .shadow img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.item.dragging {
+  opacity: 0.5;
+  transform: scale(1.05);
+}
+
+.shadow.over {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+.item.matched, .shadow.matched {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.success-message {
+  text-align: center;
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e8f5e9;
+  border-radius: 5px;
+}
+
+/* Yeni eklenen stil blokları */
+.category-selection {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.category-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-buttons button:hover {
+  background-color: #45a049;
+}
+
+.category-buttons button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
+}
+
+.success-message button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.success-message button:hover {
+  background-color: #1E88E5;
+}
+
+@media (max-width: 768px) {
+  .game-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .items-column, .shadows-column {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .item, .shadow {
+    width: 150px;
+    height: 150px;
+  }
+
+  .category-selection {
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
   }
-  
-  .shadow-matching-game h2 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .shadow-matching-game p {
-    text-align: center;
+
+  .category-selection h3 {
+    font-size: 24px;
     margin-bottom: 20px;
   }
-  
-  .game-container {
-    display: flex;
-    justify-content: space-around;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .items-column, .shadows-column {
-    display: flex;
+
+  .category-buttons {
     flex-direction: column;
-    gap: 30px;
-  }
-  
-  .item, .shadow {
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    transition: all 0.3s ease;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    touch-action: none;
-    user-select: none;
+    gap: 15px;
   }
-  
-  .item {
-    cursor: move;
+
+  .category-button {
+    width: 80%;
+    max-width: 250px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    padding: 20px;
   }
-  
-  .item img, .shadow img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
+
+  .category-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
   }
-  
-  .item.dragging {
-    opacity: 0.5;
-    transform: scale(1.05);
+
+  .category-label {
+    font-size: 20px;
   }
-  
-  .shadow.over {
-    background-color: rgba(0, 255, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .category-buttons {
+    gap: 20px;
   }
-  
-  .item.matched, .shadow.matched {
-    opacity: 0.7;
-    cursor: default;
+
+  .category-button {
+    width: 180px;
+    height: 180px;
+    padding: 25px;
   }
-  
-  .success-message {
-    text-align: center;
-    color: #4caf50;
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #e8f5e9;
-    border-radius: 5px;
+
+  .category-icon {
+    font-size: 60px;
   }
-  
-  @media (max-width: 768px) {
-    .game-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .items-column, .shadows-column {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-  
-    .item, .shadow {
-      width: 150px;
-      height: 150px;
-    }
+
+  .category-label {
+    font-size: 22px;
   }
-  
-  /* Dokunmatik cihazlar için ek stiller */
-  @media (hover: none) and (pointer: coarse) {
-    .item, .shadow {
-      cursor: grab;
-    }
-  
-    .item:active, .shadow:active {
-      cursor: grabbing;
-    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .item, .shadow {
+    cursor: grab;
   }
+
+  .item:active, .shadow:active {
+    cursor: grabbing;
+  }
+
+  .back-to-categories {
+    width: 80%;
+  }
+
+  .category-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-button {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+
+  .category-icon {
+    font-size: 36px;
+  }
+
+  .category-label {
+    font-size: 16px;
+  }
+}
+
+
+.back-to-categories {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-categories:hover {
+  background-color: #1E88E5;
+}
+
+.back-to-categories:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.5);
+}
+
+
+.category-selection {
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: #f0f0f0;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.category-selection h3 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.category-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  width: 200px;
+  height: 200px;
+}
+
+.category-button:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.category-icon {
+  font-size: 72px;
+  margin-bottom: 20px;
+}
+
+.category-label {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.category-button.animal { background-color: #FFC3A0; }
+.category-button.fruit { background-color: #A0FFC3; }
+.category-button.object { background-color: #A0C3FF; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.category-button:hover .category-icon {
+  animation: bounce 0.6s ease infinite;
+}

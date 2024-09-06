@@ -1,61 +1,122 @@
 .game-container {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #f0f8ff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  }
-  
-  .maze {
-    display: grid;
-    grid-template-columns: repeat(5, 50px);
-    grid-gap: 2px;
-    margin: 20px 0;
-  }
-  
-  .cell {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-  }
-  
-  .wall { background-color: #333; }
-  .path { background-color: #fff; }
-  .player { background-color: #ff9999; }
-  .exit { background-color: #99ff99; }
-  
-  .controls {
-    margin-top: 20px;
-  }
-  
-  .controls button {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .controls button:hover {
-    background-color: #45a049;
-  }
-  
-  .command-list {
-    margin-top: 20px;
-    min-height: 50px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-  }
+  font-family: var(--primary-font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #87CEEB; /* Sky blue background */
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+h1 {
+  color: #FF6347; /* Tomato color */
+  text-shadow: 2px 2px #FFF;
+  font-size: var(--heading-font-size);
+}
+
+.game-board {
+  background-color: #FFD700; /* Golden background for the game board */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.maze {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  grid-gap: 5px;
+  margin: 20px 0;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #FFA500; /* Orange border */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.wall { background-color: #228B22; } /* Forest green for trees */
+.path { background-color: #90EE90; } /* Light green for grass */
+.player { background-color: #FF69B4; } /* Hot pink for the player */
+.exit { background-color: #FF0000; } /* Red for the apple */
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.controls button {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background-color: #FF69B4; /* Hot pink buttons */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.controls button:hover {
+  transform: scale(1.1);
+}
+
+.controls button:active {
+  transform: scale(0.9);
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.controls button.go-button {
+  width: auto;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: #32CD32; /* Lime green for GO button */
+}
+
+.controls button.reset-button {
+  background-color: #FFD700; /* Gold color for reset button */
+}
+
+.command-list {
+  margin-top: 20px;
+  min-height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+
+.command {
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0F8FF; /* Alice Blue background */
+  border-radius: 5px;
+}
+
+.warning, .success, .error {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.warning { background-color: #FFA500; color: white; } /* Orange warning */
+.success { background-color: #32CD32; color: white; } /* Lime green success */
+.error { background-color: #FF6347; color: white; } /* Tomato error */
