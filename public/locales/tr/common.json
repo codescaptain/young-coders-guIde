@@ -60,6 +60,27 @@
   "left_leg": "Sol Bacak",
   "right_arm": "Sağ Kol",
   "left_arm": "Sol Kol",
-  "games": "Oyunlar"
-  
+  "games": "Oyunlar",
+  "shadow_matching": "Gölge Eşleştirme",
+  "please_select_category": "Lütfen bir kategori seçin:",
+  "category": "Kategori",
+  "drag_and_drop": "Resmi eşleşen gölgeye sürükleyip bırakın.",
+  "congratulations": "Tebrikler! Tüm eşleştirmeleri başarıyla tamamladınız!",
+  "select_new_category": "Yeni Kategori Seç",
+  "categories": {
+    "animal": "Hayvanlar",
+    "fruit": "Meyveler",
+    "object": "Nesneler",
+    "unknown": "Bilinmeyen"
+  },
+  "fruitAdventureTitle": "Meyve Macerası",
+  "fruitAdventureInstructions": "Labirentte gezinerek tüm meyveleri topla!",
+  "go": "Git",
+  "invalidMove": "Geçersiz hamle! Oraya gidemezsin.",
+  "hitWall": "Bir duvara çarptın!",
+  "notReachedExit": "Çıkışa ulaşamadın.",
+  "gameWon": "Tebrikler! Çıkışa ulaştın!",
+  "gameLost": "Oyunu kaybettin!",
+  "startNewGame": "Yeni Bir Oyun Başlat",
+  "outOfBoundsOrHitWall": "Labirent sınırlarının dışına çıktınız veya bir duvara çarptınız!"
 }

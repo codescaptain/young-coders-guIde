@@ -1,5 +1,47 @@
 # Changelog
 
+## 2023-09-06
+
+### Added
+- Implemented "Meyve Toplama Macerası" (Fruit Collection Adventure) game.
+- Added a 5x5 grid-based maze system for the game.
+- Implemented player movement with arrow buttons.
+- Added automatic movement execution based on user-defined commands.
+- Integrated confetti effect for winning the game.
+
+### Changed
+- Updated the Games section to include the new Fruit Collection Adventure game.
+
+### Improved
+- Enhanced game logic to include boundary checks and wall collision detection.
+- Implemented a visual command list using emojis for better user experience.
+
+## 2023-08-31
+
+### Added
+- Robot builder game
+- All games section in homepage
+
+## 2023-08-24
+
+### Added
+- Created a new "Games" section on the homepage.
+- Implemented a new GamesSection component.
+- Added Shadow Matching Game with drag-and-drop functionality.
+- Introduced new game cards for various coding games.
+
+### Changed
+- Updated _index.tsx to include the new GamesSection component.
+- Enhanced homepage layout with the addition of the Games section.
+
+### Improved
+- Expanded the educational content with interactive game elements.
+- Enhanced user engagement through gamification of coding concepts.
+
+### Updated
+- Modified homepage.css to include styles for the new Games section and game cards.
+- Adjusted ShapeMatchingGame.tsx for improved gameplay and larger image sizes.
+
 ## 2023-08-31
 
 ### Added
